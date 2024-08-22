@@ -1,0 +1,207 @@
+
+// Variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$light-color: #ffffff;
+$dark-color: #343a40;
+
+$font-family-base: 'Arial, sans-serif';
+$font-size-base: 16px;
+$font-size-lg: 1.25rem;
+$font-size-sm: 0.875rem;
+
+$spacer: 1rem;
+$spacer-half: $spacer / 2;
+$border-radius: 0.25rem;
+
+// Navbar styles
+.navbar {
+    background-color: #c7d0db;
+    color: #fff;
+    padding: 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #323946;
+        border: 2px solid #323946;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .navbar-collapse {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 1;
+
+        .navbar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+
+            .nav-item {
+                margin-left: $spacer;
+
+                .nav-link {
+                    text-decoration: none;
+                    color: #323946;
+                    font-size: 1rem;
+                    padding: 0.5rem 1rem;
+                    border: 2px solid #323946;
+                    border-radius: $border-radius;
+                    background-color: transparent;
+                    transition: all 0.3s;
+
+                    &:hover {
+                        color: teal;
+                        background-color: #190a0a;
+                        border-color: teal;
+                    }
+                }
+
+                &.btn-link {
+                    background-color: $primary-color;
+                    color: $light-color;
+                    border: none;
+                    padding: 0.5rem 1rem;
+                    border-radius: $border-radius;
+                    text-align: center;
+
+                    &:hover {
+                        background-color: darken($primary-color, 10%);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .navbar-collapse {
+            flex-direction: column;
+            align-items: flex-start;
+
+            .navbar-nav {
+                flex-direction: column;
+                width: 100%;
+
+                .nav-item {
+                    margin-left: 0;
+                    margin-bottom: $spacer-half;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Additional custom styles can be added as needed
+
+
+// Center the login card
+.logincontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    width: 80%;
+   
+}
+
+
+.card {
+    width: 300%;
+    max-width: 500px;
+    margin: $spacer;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: none;
+    border-radius: $border-radius;
+   
+
+    .card-header {
+        background-color: $primary-color;
+        color: $light-color;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: $spacer;
+        border-radius: $border-radius $border-radius 0 0;
+    }
+
+    .card-body {
+        padding: $spacer;
+    }
+    .form-control {
+        border: 1px solid $secondary-color;
+        border-radius: $border-radius;
+        padding: $spacer-half;
+        margin-bottom: $spacer;
+        width: 100%; // Adjust the width of input fields
+        font-size: 1rem; // Adjust the font size of input fields
+    
+        &:focus {
+            border-color: $primary-color;
+            box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+        }
+    
+        &.is-invalid {
+            border-color: red;
+    
+            &:focus {
+                box-shadow: 0 0 0 0.2rem rgba(red, 0.25);
+            }
+        }
+    }
+    
+}
+// Label styles
+.col-form-label {
+    font-size: 1.1rem; // Adjust the font size of labels
+    font-weight: bold;
+    text-align: right;
+    padding-top: calc($spacer-half + 2px);
+}
+
+.btn-primary {
+    background-color: $primary-color;
+    border: none;
+    border-radius: $border-radius;
+    padding: $spacer-half $spacer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}
+.btn-link {
+    color: $primary-color;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+
+    &:hover {
+        color: darken($primary-color, 10%);
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        padding: $spacer;
+    }
+
+    .card {
+        margin: $spacer-half;
+    }
+}
